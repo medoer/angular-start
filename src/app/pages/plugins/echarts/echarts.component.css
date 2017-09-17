@@ -1,0 +1,10 @@
+.grid-config {
+    background: lightblue;
+    height: 200px;
+    width: 100%;
+}
+
+.demo-chart {
+    height: 100%;
+    width: 100%;
+}

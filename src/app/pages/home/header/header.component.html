@@ -1,0 +1,25 @@
+<nz-header>
+  <div class="logo" ></div>
+  <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px;" [nzTheme]="'light'">
+    <li nz-menu-item *ngFor="let menu of menus"><a routerLink={{menu.path}}><i class="anticon anticon-mail"></i>{{menu.name}}</a></li>
+     <!-- <li nz-submenu>
+      <span title><i class="anticon anticon-setting"></i>管理</span>
+      <ul>
+        <li nz-menu-group>
+          <span title>交互</span>
+          <ul>
+            <li nz-menu-item>事件</li>
+            <li nz-menu-item>属性</li>
+          </ul>
+        </li>
+        <li nz-menu-group>
+          <span title>实时</span>
+          <ul>
+            <li nz-menu-item>事件</li>
+            <li nz-menu-item>属性</li>
+          </ul>
+        </li>
+      </ul>
+    </li>  -->
+  </ul>
+</nz-header>

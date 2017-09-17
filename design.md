@@ -27,6 +27,8 @@
 
 ### angular 插件整合
 
+#### echarts
+> 宽度计算有问题
 #### markdown
 #### scss
 
@@ -34,6 +36,11 @@
 
 ### docs
 
+### repeat
+#### regular
+
+### ionic
+### electron
 ## 内容
 
 # 目录结构
@@ -48,3 +55,8 @@
 - shared
 - theme
 - pages
+    - home
+        - header
+        - content
+        - footer
+        - breadthumb

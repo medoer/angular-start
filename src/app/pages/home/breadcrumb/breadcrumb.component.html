@@ -1,0 +1,6 @@
+<nz-breadcrumb style="margin:12px 0;" [nzSeparator]="'>'">
+  <nz-breadcrumb-item *ngFor="let breadcrumb of mybreadcrumbs">
+    <a routerLink={{breadcrumb.path}}><i class="anticon {{breadcrumb.icon}}"></i><span>{{breadcrumb.name}}</span></a>
+  </nz-breadcrumb-item>
+  
+</nz-breadcrumb>
