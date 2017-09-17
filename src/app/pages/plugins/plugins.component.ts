@@ -16,9 +16,13 @@ export class PluginsComponent implements OnInit {
         {
         path: './e', name: 'sample', icon: ''
         },
+       
+      ]},
+      {path: '', name: 'markdown', icon: '', menuThird: [
         {
-        path: './markdown', name: 'markdown', icon: ''
+        path: './markdown', name: 'sample', icon: ''
         },
+       
       ]}
     ]
   }
