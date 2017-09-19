@@ -1,22 +1,50 @@
-
 <div class="gutter-example">
-  <div nz-row [nzGutter]="8">
-    <div nz-col class="gutter-row" [nzSpan]="6">
-      <button nz-button [nzType]="'primary'" (dblclick)="myOndblclick($event)">
-        <span>dblclick!</span>
-      </button>
-      <button nz-button [nzType]="'primary'" on-dblclick="myOndblclick($event)">
+  <div nz-row [nzGutter]="8" class="ng-row">
+    <div nz-col class="gutter-row" [nzSpan]="3">
+      <button nz-button [nzType]="'primary'" (dblclick)="myOndblclick()">
         <span>dblclick!</span>
       </button>
     </div>
-    <div nz-col class="gutter-row" [nzSpan]="6">
-      <div class="gutter-box">col-6</div>
+    <div nz-col class="gutter-row" [nzSpan]="3">
+      <button nz-button [nzType]="'primary'" (click)="myOnclick()">
+        <span>click!</span>
+      </button>
     </div>
-    <div nz-col class="gutter-row" [nzSpan]="6">
-      <div class="gutter-box">col-6</div>
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      <div class="gutter-box">{{dblclickText}}</div>
     </div>
+  </div>
+  <div nz-row [nzGutter]="8" class="ng-row">
     <div nz-col class="gutter-row" [nzSpan]="6">
-      <div class="gutter-box">col-6</div>
+      <input (blur)="myOnblur($event, 'lightgreen')" (focus)="myOnfocus($event, 'green')" [(ngModel)]='bf'>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      <div class="gutter-box">onblur onfocus</div>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" class="ng-row">
+    <div nz-col class="gutter-row" [nzSpan]="6">
+      <input (change)="myOnchange($event)" [(ngModel)]="color">
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      <div class="gutter-box">{{color}}</div>
+    </div>
+  </div>
+  <div nz-row [nzGutter]="8" class="ng-row">
+    <div nz-col class="gutter-row" [nzSpan]="3">
+      <nz-spin [nzTip]="'正在加载图片...'" [nzSpinning]="_isSpinning">
+        <nz-alert [nzType]="'info'" [nzMessage]="'图片获取失败'">
+        </nz-alert>
+      </nz-spin>
+      <img src="./img/1.jpg" (error)="myOnerror()">
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="3">
+        <button nz-button [nzType]="'primary'" (keydown)="myOnkeydown()">
+            <span>stop!</span>
+          </button>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="18">
+      <div class="gutter-box">{{error}}</div>
     </div>
   </div>
 </div>
