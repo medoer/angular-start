@@ -19,6 +19,8 @@ import { BreadcrumbComponent } from './pages/home/breadcrumb/breadcrumb.componen
 import { EchartsComponent } from './pages/plugins/echarts/echarts.component';
 import { IndexComponent } from './pages/home/index/index.component';
 import { MarkdownComponent } from './pages/plugins/markdown/markdown.component';
+import { EventBindingComponent } from './pages/angular-correlation/event-binding/event-binding.component';
+import { AngularCorrelationComponent } from './pages/angular-correlation/angular-correlation.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { MarkdownComponent } from './pages/plugins/markdown/markdown.component';
     EchartsComponent,
     IndexComponent,
     MarkdownComponent,
+    EventBindingComponent,
+    AngularCorrelationComponent,
   ],
   imports: [
     BrowserModule,

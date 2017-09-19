@@ -13,6 +13,7 @@ export class HeaderComponent implements OnInit {
   menus: Object[] = [
     { path: '/index', name: 'home' },
     { path: '/plugins', name: 'plugins' },
+    { path: '/angular-correlation', name: 'angular correlation' },
   ];
   constructor() { }
 
