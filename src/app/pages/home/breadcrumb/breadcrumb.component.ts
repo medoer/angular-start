@@ -12,7 +12,7 @@ export class BreadcrumbComponent implements OnInit {
 
   ngOnInit() {
     this.mybreadcrumbs = [
-      {path: '/plugins', name: 'home', icon: 'anticon-home'},
+      {path: '', name: 'home', icon: 'anticon-home'},
       {path: '/plugins', name: 'plugins', icon: 'anticon-folder'},
     ]
   }

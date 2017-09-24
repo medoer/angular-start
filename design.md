@@ -15,6 +15,7 @@
 ### home
 
 ### angular 用例
+> angular-correlation module
 
 #### module
 #### router
@@ -26,7 +27,7 @@
 #### httpclient
 
 ### angular 插件整合
-
+> plugins module
 #### echarts
 > 宽度计算有问题
 #### markdown
@@ -56,7 +57,17 @@
 - theme
 - pages
     - home
+        - home
         - header
-        - content
         - footer
         - breadthumb
+        - index
+    - plugins
+        - plugins
+        - echarts
+        - markdown
+    - angular-correlation
+        - angular-correlation
+        - event-binding
+- app.routes
+- menu.ts
