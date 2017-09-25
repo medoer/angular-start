@@ -1,0 +1,10 @@
+<nz-switch [(ngModel)]="switchValue"></nz-switch>
+<nz-rate *ngIf="switchValue" [ngModel]="0"></nz-rate>
+<br>
+<br>
+<button nz-button [nzType]="'primary'" (click)="myOnclick()">
+  <span>click me</span>
+</button>
+<nz-tooltip *ngIf="switchValue2" [nzTitle]="'prompt text'">
+  <span nz-tooltip>{{switchValue2}}</span>
+</nz-tooltip>

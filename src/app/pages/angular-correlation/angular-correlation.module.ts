@@ -6,6 +6,7 @@ import { NgZorroAntdModule } from "ng-zorro-antd";
 import { AngularCorrelationRoutingModule } from './angular-correlation-routing.module';
 import { AngularCorrelationComponent } from "./angular-correlation.component";
 import { EventBindingComponent } from "./event-binding/event-binding.component";
+import { StructuralDeriectivesComponent } from './structural-deriectives/structural-deriectives.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import { EventBindingComponent } from "./event-binding/event-binding.component";
   ],
   declarations: [
     AngularCorrelationComponent,
-    EventBindingComponent
+    EventBindingComponent,
+    StructuralDeriectivesComponent
   ]
 })
 export class AngularCorrelationModule { }

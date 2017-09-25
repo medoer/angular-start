@@ -18,6 +18,9 @@ export class AngularCorrelationComponent implements OnInit {
           {
             path: './event-binding', name: 'event binding', icon: ''
           },
+          {
+            path: './structural-deriectives', name: 'structural edriectives', icon: ''
+          },
 
         ]
       },
