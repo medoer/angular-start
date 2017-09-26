@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 @Component({
   selector: 'plugins',
   templateUrl: './plugins.component.html',

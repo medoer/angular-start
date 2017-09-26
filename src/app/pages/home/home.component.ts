@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router, NavigationEnd } from "@angular/router";
+import { NzMessageService } from 'ng-zorro-antd';
 @Component({
   selector: 'home',
   templateUrl: './home.component.html',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _router: Router, private _message: NzMessageService) { }
 
   ngOnInit() {
+    this._router.events.subscribe($event => {
+      if ($event instanceof NavigationEnd) {
+        this.createMessage("success", "路由导航成功");
+      }
+    });
   }
 
+  createMessage = (type, text) => {
+    this._message.create(type, `${text}`);
+  };
 }

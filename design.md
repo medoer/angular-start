@@ -19,6 +19,9 @@
 
 #### module
 #### router
+
+- 辅助路由
+
 #### service
 #### template
 #### rxjs
@@ -32,6 +35,7 @@
 > 宽度计算有问题
 #### markdown
 #### scss
+#### allowjs
 
 ### angular 应用
 
@@ -53,11 +57,12 @@
 - img(系统)
 - i18n
 ## app
-- shared
+
 - theme
 - pages
     - home
         - home
+            - 添加路由监控事件
         - header
         - footer
         - breadthumb
@@ -69,5 +74,7 @@
     - angular-correlation
         - angular-correlation
         - event-binding
+    - shared
+        - NgZorroAntdModule
 - app.routes
 - menu.ts

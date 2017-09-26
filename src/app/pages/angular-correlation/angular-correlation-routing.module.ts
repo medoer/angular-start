@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AngularCorrelationComponent } from "./angular-correlation.component";
 import { EventBindingComponent } from "./event-binding/event-binding.component";
 import { StructuralDeriectivesComponent } from './structural-deriectives/structural-deriectives.component';
+import { AngularRouterComponent } from "./angular-router/angular-router.component";
 
 const routes: Routes = [
   {
@@ -14,6 +15,7 @@ const routes: Routes = [
     path: '', component: AngularCorrelationComponent, children: [
       { path: 'event-binding', component: EventBindingComponent },
       { path: 'structural-deriectives', component: StructuralDeriectivesComponent },
+      { path: 'angular-router/:param', component: AngularRouterComponent },
     ]
   },
   {

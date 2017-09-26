@@ -21,6 +21,9 @@ export class AngularCorrelationComponent implements OnInit {
           {
             path: './structural-deriectives', name: 'structural edriectives', icon: ''
           },
+          {
+            path: './angular-router/1', name: 'angular router', icon: ''
+          },
 
         ]
       },
