@@ -58,6 +58,8 @@
 - i18n
 ## app
 
+- common
+    - preload-modules-strategy
 - theme
 - pages
     - home
