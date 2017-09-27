@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'angular-router',
@@ -8,14 +8,17 @@ import { ActivatedRoute } from "@angular/router";
 })
 export class AngularRouterComponent implements OnInit {
 
-  constructor(private _activatedRoute: ActivatedRoute) { }
+  constructor(private _activatedRoute: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
     this._activatedRoute.params.subscribe(
       params => {
-        
+        console.log(params);
       }
     );
+    setTimeout(() => {
+      // this._router.navigateByUrl('/');
+    }, 1000);
   }
 
 }

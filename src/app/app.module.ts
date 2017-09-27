@@ -4,7 +4,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { NgZorroAntdModule } from "ng-zorro-antd";
-import { RouterModule } from "@angular/router";
+import { RouterModule, PreloadAllModules, NoPreloading } from "@angular/router";
+import { PreloadModulesStrategy } from "./common/preload-modules-strategy";
 
 import { appRoutes } from "./app.routes";
 import { AppComponent } from './app.component';
@@ -30,9 +31,11 @@ import { IndexComponent } from './pages/home/index/index.component';
     HttpModule,
     BrowserAnimationsModule,
     NgZorroAntdModule.forRoot(),
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes, {preloadingStrategy: PreloadModulesStrategy})
   ],
-  providers: [],
+  providers: [
+    PreloadModulesStrategy
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

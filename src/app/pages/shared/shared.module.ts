@@ -1,18 +1,15 @@
-import { NgModule } from '@angular/core';
+import { NgModule, ModuleWithProviders } from '@angular/core';
 
 import { NgZorroAntdModule } from "ng-zorro-antd";
 import { MessageService } from "./services/message.service";
 
+// export module
+export { NgZorroAntdModule } from "ng-zorro-antd";
+
 @NgModule({
-  imports: [],
-  declarations: [],
   exports: [
-    NgZorroAntdModule,
-    MessageService
-  ],
-  providers: [
-    MessageService
+    NgZorroAntdModule
   ]
 })
-export class SharedModule { }
-
+export class SharedModule {
+}

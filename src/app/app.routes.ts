@@ -16,7 +16,8 @@ export const appRoutes = [
     { path: 'home', component: HomeComponent },
     { path: 'index', component: IndexComponent },
     {
-        path: 'plugins', 
+        path: 'plugins',
+        data: {preload: true},
         loadChildren: './pages/plugins/plugins.module#PluginsModule'
     },
     {
