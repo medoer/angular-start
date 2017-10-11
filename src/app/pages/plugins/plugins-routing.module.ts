@@ -3,6 +3,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { PluginsComponent } from "./plugins.component";
 import { EchartsComponent } from "./echarts/echarts.component";
 import { MarkdownComponent } from './markdown/markdown.component';
+import { CreateGraphComponent } from './echarts/create-graph/create-graph.component';
+import { DesignComponent } from './echarts/design/design.component';
 
 const routes: Routes = [
   {
@@ -11,15 +13,18 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
-        path: '', component: PluginsComponent, children: [
-            { path: 'e', component: EchartsComponent },
-            { path: 'markdown', component: MarkdownComponent },
-        ]
-    },
-    {
-      path: '**',
-      component: PluginsComponent
-    }
+    path: '', component: PluginsComponent, children: [
+      { path: 'e', component: EchartsComponent },
+      { path: 'create', component: CreateGraphComponent },
+      { path: 'design', component: DesignComponent },
+      { path: 'e3', component: EchartsComponent },
+      { path: 'markdown', component: MarkdownComponent },
+    ]
+  },
+  {
+    path: '**',
+    component: PluginsComponent
+  }
 ];
 
 @NgModule({

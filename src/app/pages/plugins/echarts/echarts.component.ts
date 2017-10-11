@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 
 @Component({
   selector: 'e',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EchartsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _activatedRoute: ActivatedRoute, private _router: Router) { }
 
   ngOnInit() {
   }
@@ -17,7 +18,7 @@ export class EchartsComponent implements OnInit {
     color: ['#3398DB'],
     tooltip: {
       trigger: 'axis',
-      axisPointer: {            // 坐标轴指示器，坐标轴触发有效
+      axisPointer: {  // 坐标轴指示器，坐标轴触发有效
         type: 'shadow'        // 默认为直线，可选为：'line' | 'shadow'
       }
     },
@@ -128,6 +129,13 @@ export class EchartsComponent implements OnInit {
       }
     ]
   }
-
+  
+  gotoCreateGraph () {
+    this._router.navigateByUrl('/plugins/create');
+  }
+  
+  gotoDesign () {
+    this._router.navigateByUrl('/plugins/design');
+  }
 
 }

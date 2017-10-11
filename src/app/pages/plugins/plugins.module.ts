@@ -8,6 +8,8 @@ import { PluginsComponent } from "./plugins.component";
 import { EchartsComponent } from "./echarts/echarts.component";
 import { MarkdownComponent } from "./markdown/markdown.component";
 import { PluginsRoutingModule } from './plugins-routing.module';
+import { CreateGraphComponent } from './echarts/create-graph/create-graph.component';
+import { DesignComponent } from './echarts/design/design.component';
 
 @NgModule({
   imports: [
@@ -19,7 +21,9 @@ import { PluginsRoutingModule } from './plugins-routing.module';
   declarations: [
     MarkdownComponent,
     EchartsComponent,
-    PluginsComponent
+    PluginsComponent,
+    CreateGraphComponent,
+    DesignComponent
   ]
 })
 export class PluginsModule { }

@@ -1,7 +1,19 @@
-<div nz-row [nzGutter]="'24'">
-     <div nz-col class="gutter-row" [nzSpan]="24/count">
+<div nz-row [nzGutter]="8" class="ng-row">
+    <div nz-col class="gutter-row" [nzSpan]="2">
+        <button nz-button [nzType]="'default'" (click)="gotoCreateGraph();">
+            <i class="anticon anticon-plus-circle"></i><span>添加图表</span>
+        </button>
+    </div>
+    <div nz-col class="gutter-row" [nzSpan]="2">
+        <button nz-button [nzType]="'default'" (click)="gotoDesign();">
+            <i class="anticon anticon-edit"></i><span>设计</span>
+        </button>
+    </div>
+</div>
+<div nz-row [nzGutter]="'24'" class="ng-row">
+    <div nz-col class="gutter-row" [nzSpan]="24/count">
         <div class="grid-config">
-             <div echarts [options]="option" class="demo-chart"></div> 
+            <div echarts [options]="option" class="demo-chart"></div>
         </div>
-    </div> 
+    </div>
 </div>

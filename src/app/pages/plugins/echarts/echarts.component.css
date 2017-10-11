@@ -8,3 +8,7 @@
     height: 100%;
     width: 100%;
 }
+
+.ng-row{
+    margin: 12px 12px 0 0;
+}
