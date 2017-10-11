@@ -21,6 +21,7 @@
 #### router
 
 - 辅助路由
+- 守卫路由
 
 #### service
 #### template
@@ -62,6 +63,7 @@
     - preload-modules-strategy
 - theme
 - pages
+    - auth
     - home
         - home
             - 添加路由监控事件
