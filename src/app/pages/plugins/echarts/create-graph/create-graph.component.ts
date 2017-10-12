@@ -1,5 +1,61 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, FormControl } from "@angular/forms";
+import { FormBuilder, FormGroup, FormControl, Validators } from "@angular/forms";
+
+const init_options = [{
+  value: 'zhejiang',
+  label: 'Zhejiang',
+  children: [{
+    value: 'hangzhou',
+    label: 'Hangzhou',
+    children: [{
+      value: 'xihu',
+      label: 'West Lake',
+      isLeaf: true
+    }],
+  }, {
+    value: 'ningbo',
+    label: 'Ningbo',
+    isLeaf: true
+  }],
+}, {
+  value: 'jiangsu',
+  label: 'Jiangsu',
+  children: [{
+    value: 'nanjing',
+    label: 'Nanjing',
+    children: [{
+      value: 'zhonghuamen',
+      label: 'Zhong Hua Men',
+      isLeaf: true
+    }],
+  }],
+}];
+
+const other_options = [{
+  value: 'fujian',
+  label: 'Fujian',
+  children: [{
+    value: 'xiamen',
+    label: 'Xiamen',
+    children: [{
+      value: 'Kulangsu',
+      label: 'Kulangsu',
+      isLeaf: true
+    }],
+  }],
+}, {
+  value: 'guangxi',
+  label: 'Guangxi',
+  children: [{
+    value: 'guilin',
+    label: 'Guilin',
+    children: [{
+      value: 'Lijiang',
+      label: 'Li Jiang River',
+      isLeaf: true
+    }],
+  }],
+}];
 
 @Component({
   selector: 'create-graph',
@@ -13,61 +69,7 @@ export class CreateGraphComponent implements OnInit {
   isCollapse = true;
   graphStyleArray = [];
   eventArray = [];
-  init_options = [{
-    value: 'zhejiang',
-    label: 'Zhejiang',
-    children: [{
-      value: 'hangzhou',
-      label: 'Hangzhou',
-      children: [{
-        value: 'xihu',
-        label: 'West Lake',
-        isLeaf: true
-      }],
-    }, {
-      value: 'ningbo',
-      label: 'Ningbo',
-      isLeaf: true
-    }],
-  }, {
-    value: 'jiangsu',
-    label: 'Jiangsu',
-    children: [{
-      value: 'nanjing',
-      label: 'Nanjing',
-      children: [{
-        value: 'zhonghuamen',
-        label: 'Zhong Hua Men',
-        isLeaf: true
-      }],
-    }],
-  }];
   
-  other_options = [{
-    value: 'fujian',
-    label: 'Fujian',
-    children: [{
-      value: 'xiamen',
-      label: 'Xiamen',
-      children: [{
-        value: 'Kulangsu',
-        label: 'Kulangsu',
-        isLeaf: true
-      }],
-    }],
-  }, {
-    value: 'guangxi',
-    label: 'Guangxi',
-    children: [{
-      value: 'guilin',
-      label: 'Guilin',
-      children: [{
-        value: 'Lijiang',
-        label: 'Li Jiang River',
-        isLeaf: true
-      }],
-    }],
-  }];
   toggleCollapse() {
     this.isCollapse = !this.isCollapse;
     this.controlArray.forEach((c, index) => {
@@ -83,7 +85,9 @@ export class CreateGraphComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.validateForm = this.fb.group({});
+    this.validateForm = this.fb.group({
+      name: [null, Validators.required ]
+    });
 
     this.graphStyleArray.push(
       {iconClass: 'anticon-line-chart', graphStyleName: '线图'}
@@ -105,23 +109,28 @@ export class CreateGraphComponent implements OnInit {
       this.controlArray.push({ index: i, show: i < 6 });
       this.validateForm.addControl(`field${i}`, new FormControl());
     }
+
+     // let's set nzOptions in a asynchronous  way
+     setTimeout(() => {
+      this._options = init_options;
+    }, 100);
   }
 
-  /** init data */
-  _options = null;
-  
-    _value: any[] = null;
-  
-    _console(value) {
-      console.log(value);
-    }
-
-    _changeNzOptions(): void {
-      if (this._options === this.init_options) {
-        this._options = this.other_options;
-      } else {
-        this._options = this.init_options;
-      }
-    }
+   /** init data */
+   _options = null;
+   
+     _value: any[] = null;
+   
+     _console(value) {
+       console.log(value);
+     }
+   
+     _changeNzOptions(): void {
+       if (this._options === init_options) {
+         this._options = other_options;
+       } else {
+         this._options = init_options;
+       }
+     }
 
 }
